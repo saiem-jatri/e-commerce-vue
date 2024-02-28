@@ -1,5 +1,11 @@
 <script setup>
+import {watch,ref} from 'vue';
 import NotificationItems from "../components/header/Notification-items.vue";
+import LoginModal from "./common/LoginModal.vue";
+const visible = ref(false);
+const openModal = ()=>{
+  visible.value = true
+}
 </script>
 
 <template>
@@ -18,17 +24,24 @@ import NotificationItems from "../components/header/Notification-items.vue";
               <img src="../assets/icons/search.png" class="w-5 h-5 absolute left-4 top-3" alt="">
             </div>
         </div>
-    <div class="w-1/4 flex items-center gap-x-4">
-      <NotificationItems>
+    <div class=" flex items-center gap-x-4">
+      <NotificationItems :cart-items="2">
           <slot>
             <img src="../assets/icons/heart.png" alt="" class="h-4 md:h-6 w-4 md:w-6">
           </slot>
       </NotificationItems>
-      <NotificationItems>
+      <NotificationItems is-cart="true" :favItems="2">
         <slot>
           <img src="../assets/icons/trolley.png" alt="" class="h-4 md:h-6 w-4 md:w-6">
         </slot>
       </NotificationItems>
+      <Button label="Show" @click="openModal">
+        <img src="../assets/icons/login.png" class="w-24" alt="">
+      </Button>
     </div>
+
+<!--    Dialog-->
+<LoginModal v-model="visible" />
   </div>
+
 </template>
