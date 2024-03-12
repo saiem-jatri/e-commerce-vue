@@ -38,15 +38,15 @@ const activeRegister = ()=>{
         </div>
     <div v-if="loginActive" class="flex justify-center">
       <div class="px-8 md:px-16">
-        <h2 class="font-bold text-2xl text-[#002D74]">Login</h2>
-        <p class="text-xs mt-4 text-[#002D74]">If you are already a member, easily log in</p>
+        <h2 class="font-bold text-2xl text-[primary]">Login</h2>
+        <p class="text-xs mt-4 text-[primary]">If you are already a member, easily log in</p>
 
         <form action="" class="flex flex-col gap-4">
           <input class="p-2 mt-8 rounded-xl border w-full md:w-[400px]" type="email" name="email" placeholder="Email">
           <div class="card flex justify-content-center">
             <Password :strength="false" :width="'100px'" class="rounded-xl border w-full focus:outline-none" style="width:100%; height:40px" v-model="password" toggleMask />
           </div>
-          <button class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
+          <button class="bg-[primary] rounded-xl text-white py-2 hover:scale-105 duration-300">Login</button>
         </form>
 
         <div class="mt-6 grid grid-cols-3 items-center text-gray-400">

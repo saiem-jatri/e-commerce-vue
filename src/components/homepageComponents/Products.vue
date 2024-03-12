@@ -2,7 +2,7 @@
 
 <template>
   <div class="text-center p-10">
-    <h1 class="font-bold text-4xl mb-4">All Products</h1>
+    <h1 class="font-bold text-4xl mb-4"><span class="text-red-700">All</span> Products</h1>
   </div>
 
   <!-- ✅ Grid Section - Starts Here 👇 -->

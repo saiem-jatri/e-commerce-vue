@@ -2,21 +2,34 @@
 import {watch,ref} from 'vue';
 import NotificationItems from "../components/header/Notification-items.vue";
 import LoginModal from "./common/LoginModal.vue";
+import CustomSide from "./common/CustomSide.vue"
 const visible = ref(false);
+const sidebar = ref(false);
 const openModal = ()=>{
   visible.value = true
+}
+const openSidebar = ()=>{
+  console.log(sidebar.value)
+  sidebar.value = !sidebar.value
+  console.log("====>",sidebar.value)
 }
 </script>
 
 <template>
   <div class="bg-white px-4 md:px-52 py-4 flex items-center gap-x-10 shadow-sm">
         <div class="w-1/4 flex items-center gap-x-10">
-          <div class="text-xl md:text-4xl font-extrabold italic text-black shadow-2xl">
-            OllE
+          <div class="text-xl md:text-4xl font-extrabold italic shadow-2xl">
+            <p class="text-red-700 text-4xl flex">O <span class="text-black">llE</span></p>
           </div>
-          <button>
+          <button @click="sidebar = true">
             <img src="../assets/icons/menu.png" class="h-4 md:h-8 w-4 md:w-8" alt="">
           </button>
+
+          <div class="card flex justify-content-center">
+            <Sidebar v-model:visible="sidebar" header="Shop By Category">
+             <CustomSide/>
+            </Sidebar>
+          </div>
         </div>
         <div class="w-1/2">
             <div class="relative">
