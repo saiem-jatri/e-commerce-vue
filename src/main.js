@@ -11,6 +11,9 @@ import 'primevue/resources/themes/saga-blue/theme.css'
 import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'
 import Sidebar from 'primevue/sidebar';
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 const app = createApp(App)
 
 app.use(router)
