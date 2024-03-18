@@ -6,10 +6,10 @@
   </div>
 
   <!-- ✅ Grid Section - Starts Here 👇 -->
-  <section class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+  <section class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
 
     <!--   ✅ Product card 1 - Starts Here 👇 -->
-    <div v-for="i in 6" class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+    <div v-for="i in 8" class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
       <a href="#">
         <img src="../../assets/images/newArrible.jpg" alt="Product" class="h-40 w-full object-contain rounded-t-xl" />
         <div class="px-4 py-3 w-72">

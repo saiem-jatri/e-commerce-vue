@@ -11,8 +11,8 @@
       <div class="h-4 w-4 flex justify-center items-center bg-black text-white font-bold rounded-full absolute top-2 right-2">
         <p> {{favItems ? favItems : cartItems}}</p>
         <div v-if="isCart" :class="isCart && cartOpen ? 'block transition-all ease-in-out' : 'hidden'"  class="absolute w-80 bg-white top-12 rounded-xl shadow-2xl">
-          <div class="bg-[#8DB2EE] w-full rounded-t-xl text-white p-4">
-            <p class="text-xs">Cart Item (1)</p>
+          <div class="bg-black w-full rounded-t-xl text-white p-4">
+            <p class="text-lg font-bold text-corporateError">Cart Item (1)</p>
           </div>
           <div class="flex flex-col gap-1">
             <div class="flex justify-between items-center mt-4 p-2">

@@ -18,7 +18,7 @@ const showModal = (i) => {
 
 <template>
   <div class="px-4 md:px-52 flex justify-center items-center mt-5 relative">
-      <div class="flex gap-x-4 flex-wrap justify-center items-center text-[#4d4d4d] text-xs md:text-sm font-semibold uppercase pb-2 border-b border-gray-200 w-full z-50">
+      <div class="flex gap-x-4 flex-wrap justify-center items-center text-[#4d4d4d] text-xs md:text-sm font-semibold uppercase pb-2 border-b border-gray-200 w-full">
           <div @mouseover="showModal(category)" v-for="(category) in allCategories" class="cursor-pointer z-50 hover:-translate-y-1 transition-all ease-in">{{ category }}</div>
       </div>
     <div>
