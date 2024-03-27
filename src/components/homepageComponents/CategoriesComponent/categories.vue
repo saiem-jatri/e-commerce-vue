@@ -1,31 +1,32 @@
 <script setup>
 import {computed, reactive, ref} from "vue";
 import NewArrival from "./NewArrival.vue";
+import {getCategory} from "../../../composable/getCategories.js"
+const {categories,allCategories} = getCategory()
+categories()
 const openModal = ref(false)
-
-const allCategories = reactive(['men','women','kids','newborn','Accessories','Footwear'])
+const allCategor = reactive(['men','women','kids','newborn','Accessories','Footwear'])
 const closeModal = () => {
   openModal.value = false;
 };
-let showingName = ref([])
+let productDetails = ref([])
 
 const showModal = (i) => {
-  showingName.value = i
+  productDetails.value = i
   openModal.value = true;
 };
-
 </script>
 
 <template>
   <div class="px-4 md:px-52 flex justify-center items-center mt-5 relative">
       <div class="flex gap-x-4 flex-wrap justify-center items-center text-[#4d4d4d] text-xs md:text-sm font-semibold uppercase pb-2 border-b border-gray-200 w-full">
-          <div @mouseover="showModal(category)" v-for="(category) in allCategories" class="cursor-pointer z-50 hover:-translate-y-1 transition-all ease-in">{{ category }}</div>
+          <div @mouseover="showModal(category)" v-for="(category) in allCategories.data" class="cursor-pointer z-50 hover:-translate-y-1 transition-all ease-in">{{ category.category_name }}</div>
       </div>
     <div>
       <transition name="slide-fade">
         <NewArrival
             v-if="openModal"
-            :showingName="showingName"
+            :productDetails="productDetails"
             @close-modal = closeModal
         />
       </transition>

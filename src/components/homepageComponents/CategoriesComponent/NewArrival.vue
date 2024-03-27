@@ -2,7 +2,7 @@
 const props = defineProps([
   "modelValue",
     "index",
-    'showingName'
+    'productDetails'
 ]);
 const emits = defineEmits(["closeModal"]);
 
@@ -14,8 +14,6 @@ const details = {
   'Accessories' : ['watch','sunglass','belt'],
   'Footwear' : ['snikkers','shoe','casual shoe'],
 }
-
-
 </script>
 
 <template>
@@ -34,11 +32,11 @@ const details = {
               </div>
             </div>
           <div class="p-4">
-            <h1 class="text-xl font-bold col-span-3">Showing Items For {{ props.showingName }}</h1>
+            <h1 class="text-xl font-bold col-span-3">Showing Items For {{ props.productDetails.category_name }}</h1>
 
-              <ul v-for="value in details[props.showingName]" class="flex flex-col flex-wrap  gap-x-2 list-disc pl-4 mt-4">
+              <ul class="flex flex-col flex-wrap  gap-x-2 list-disc pl-4 mt-4">
                 <li class=""><router-link to="">
-                  {{value}}
+                  {{props.productDetails.category_name}}
                 </router-link>
                 </li>
               </ul>
